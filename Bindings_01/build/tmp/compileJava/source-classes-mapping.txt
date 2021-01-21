@@ -1,0 +1,10 @@
+org/meins/javafx/binding/Binding_04_LowLevel.java
+ org.meins.javafx.binding.Binding_04_LowLevel
+ org.meins.javafx.binding.Binding_04_LowLevel$1
+org/meins/javafx/binding/Binding_01_HighLevel.java
+ org.meins.javafx.binding.Binding_01_HighLevel
+org/meins/javafx/binding/Binding_02_BindingClass.java
+ org.meins.javafx.binding.Binding_02_BindingClass
+org/meins/javafx/binding/Binding_03_BindingInvalidation.java
+ org.meins.javafx.binding.Binding_03_BindingInvalidation
+ org.meins.javafx.binding.Binding_03_BindingInvalidation$1

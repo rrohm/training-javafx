@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="256.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.meins.javafx.fxml.UIController">
+  <children>
+    <!-- Dank fx:value-Attributen lassen sich Instanzen beliebiger Typen in FXML deklarieren, -->
+    <!-- solange sie eine valueOf(String t)-Methode implementieren.                           -->
+    <!-- Mit fx:factory-Attributen können auch Instanzen von Lists und Maps in FXML           -->
+    <!-- deklariert werden.                                                                   --> 
+    <TitledPane collapsible="false" layoutX="30.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" text="UI Nodes und fx:value">
+      <content>
+        <VBox>
+          <children>
+            <Label text="Auswahl mit Werten aus FXML – dies ist möglich mit allen Typen, die eine valueOf()-Methode implementieren:" wrapText="true" />
+            <ComboBox fx:id="comboBox1" prefWidth="150.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="A" />
+                  <String fx:value="B" />
+                  <String fx:value="C" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+          </children>
+        </VBox>
+      </content>
+    </TitledPane>
+    <!-- Generell macht eine saubere Trennung von Daten und UI-Deklaration jedoch Sinn.  -->
+    <!-- Demnach sollte FXML nur die UI-Struktur deklarieren, Daten definiert dagegen    -->
+    <!-- der Controller. Der "Controller" aus dem MVC-Pattern wird hier zumindest        --> 
+    <!-- teilweise zum "ViewModel" aus dem MVVM-Pattern.                                 -->
+    <TitledPane collapsible="false" layoutX="250.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" text="Model im Controller">
+      <content>
+        <VBox>
+          <children>
+            <Label text="In den meisten Fällen macht es wesentlich mehr Sinn, UI und Model zu trennen." wrapText="true" />
+            <ComboBox fx:id="comboBox2" prefWidth="150.0" />
+          </children>
+        </VBox>
+      </content>
+    </TitledPane>
+    <fx:include fx:id="fragment" layoutX="470.0" layoutY="30.0" source="UIFragment.fxml" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="320.0" xmlns:fx="http://javafx.com/fxml" fx:controller="org.meins.javafx.threads.Concurrency_04_TaskController">
+  <children>
+    <Button fx:id="button" layoutX="119.0" layoutY="72.0" onAction="#handleButtonAction" prefWidth="83.0" text="Starten" />
+    <Label fx:id="label" layoutX="14.0" layoutY="152.0" minHeight="16.0" minWidth="69.0" prefHeight="16.0" prefWidth="292.0" />
+    <ProgressBar fx:id="progressBar" layoutX="14.0" layoutY="176.0" prefWidth="292.0" progress="0.0" />
+    <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte klicken, um Task zu starten:" />
+    <Button id="button" layoutX="119.0" layoutY="100.0" onAction="#handleButtonCancelAction" prefWidth="83.0" text="Abbrechen" />
+    <Text fx:id="text" layoutX="14.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+rootProject.name = 'aeJavaFXTraining'
+
+include ':Bindings_01'
+include ':Bindings_02'
+include ':Bindings_03'
+include ':Components_01'
+include ':Concurrency_00'
+include ':Concurrency_01_Task'
+include ':Concurrency_02_Task'
+include ':Concurrency_03_Task'
+include ':Concurrency_04_Task'
+include ':Concurrency_05_Service'
+include ':FXML_01'
+//include ':WeakListeners_01'
+
