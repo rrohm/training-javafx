@@ -63,7 +63,10 @@ public class UIController implements Initializable {
    */
   @FXML
   private UIFragmentController fragmentController;
-  
+
+  /**
+   * ViewModel kapselt ViewModel-Daten
+   */
   private ViewModel viewModel = new ViewModel();
 
   @SuppressWarnings({"rawtypes", "unchecked"})
@@ -77,6 +80,7 @@ public class UIController implements Initializable {
     
 
     // Initialisierung des ComboBox-ViewModels
+    // Achtung: Befüllung der Listen ist auch ViewModel, muss noch entsprechend abgebildet werden.
     comboBox2.setConverter(new BausteinStringConverter());
     comboBox2.getItems().setAll(Arrays.asList(
             new Baustein("Baustein 1.1"),

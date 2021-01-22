@@ -26,31 +26,20 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
-
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
- *
- * @author robert rohm
+ * Das ViewModel ist das Bindglied zwischen Model und View:
+ * <ul>
+ *     <li>Es hält die Model-Information für die View bereit - ggf. in für die View geeigneter Form</li>
+ *     <li>Es stellt ggf. zusätzliche Properties für die UI-Steuerung bereit.</li>
+ *     <li>Es kennt jedoch keine spezifischen UI-Elemente.</li>
+ *     <li>Statt dessen werden UI-Elemente an ViewModel-Elemente gebunden.</li>
+ *     <li>Eine Implementierung des ViewModels als eigenständige Struktur macht es möglich, ViewModel-Verhalten
+ *         völlig unabhängig vom UI zu testen.
+ *     </li>
+ *     <li>Nach MVVM-Pattern ist das ViewModel auch zuständig für die Aktualisierung des Models. Allerdings
+ *         macht das Pattern und auch das JavaFX-Framework keine Aussage darüber, <i>wie</i> dies im Detail zu lösen ist.
+ *         Dies bleibe als "Herausforderung" für die Entwicklung.
+ *     </li>
+ * </ul>
  */
-public class UIFragmentController implements Initializable {
-
-  private ObservableList<String> comboboxModel;
-
-  @FXML
-  private ComboBox<String> comboBox2;
-
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
-  }
-
-}
+package org.meins.javafx.architektur.viewmodel;

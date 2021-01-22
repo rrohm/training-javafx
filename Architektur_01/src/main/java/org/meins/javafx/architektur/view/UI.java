@@ -26,31 +26,64 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
+package org.meins.javafx.architektur.view;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
- *
+ * Das Hauptfenster der Anwendung.
+ * 
  * @author robert rohm
  */
-public class UIFragmentController implements Initializable {
-
-  private ObservableList<String> comboboxModel;
+public class UI extends VBox implements Initializable {
 
   @FXML
-  private ComboBox<String> comboBox2;
+  private Button btElemente;
+
+  @FXML
+  private TabPane tabPane;
+
+  @FXML
+  private HBox pnStatus;
+
+  @FXML
+  private Label lbStatus;
+
+  public UI() {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/meins/javafx/architektur/app/UI.fxml"));
+    fxmlLoader.setRoot(this);
+    fxmlLoader.setController(this);
+
+    try {
+      fxmlLoader.load();
+    } catch (IOException ex) {
+      // TODO: Einheitliche Fehlerbehandlung
+      ex.printStackTrace();
+    }
+  }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
+    System.out.println(this.getClass().getName() + ".initialize");
+    
+    this.btElemente.setOnAction((event) -> {
+      Tab tab = new Tab("Element-Auswahl");
+      ElementListe elementListe = new ElementListe();
+      tab.setContent(elementListe);
+      this.tabPane.getTabs().add(tab);
+      this.tabPane.getSelectionModel().select(tab);
+    });
   }
 
 }

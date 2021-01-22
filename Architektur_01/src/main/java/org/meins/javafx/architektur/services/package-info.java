@@ -26,31 +26,14 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
-
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
- *
- * @author robert rohm
+ * Dieses Package enthält die <b>JavaFX-spezifischen</b> Services. Sie stellen,
+ * wenn man so will, eine eigene Service-Schicht dar, bzw., sie kapseln den
+ * eigentlichen Service-Layer mit dem Datenzugriff.
+ * <p>
+ * Hintergrund: JavaFX stellt eigene Task- und Service-Klassen bereit, um lang
+ * laufender Aktionen nebenläufig auszuführen, gleichzeitig aber Feedback wieder
+ * auf dem FX Application Thread geben zu können.
+ * </p>
  */
-public class UIFragmentController implements Initializable {
-
-  private ObservableList<String> comboboxModel;
-
-  @FXML
-  private ComboBox<String> comboBox2;
-
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
-  }
-
-}
+package org.meins.javafx.architektur.services;

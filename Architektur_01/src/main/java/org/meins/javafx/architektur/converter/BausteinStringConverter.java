@@ -26,31 +26,28 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
+package org.meins.javafx.architektur.converter;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.util.StringConverter;
+import org.meins.javafx.architektur.viewmodel.Baustein;
 
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
- *
+ * String-Converter für die ViewModel-Klasse Baustein.
  * @author robert rohm
  */
-public class UIFragmentController implements Initializable {
-
-  private ObservableList<String> comboboxModel;
-
-  @FXML
-  private ComboBox<String> comboBox2;
-
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
+public class BausteinStringConverter extends StringConverter<Baustein> {
+  
+  public BausteinStringConverter() {
   }
 
+  @Override
+  public String toString(Baustein object) {
+    return (object != null) ? object.getBezeichnung() : "";
+  }
+
+  @Override
+  public Baustein fromString(String string) {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+  
 }

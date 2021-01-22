@@ -26,31 +26,39 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
+package org.meins.javafx.architektur.viewmodel;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
+ * Untergeordnetes ViewModel-Elements
  *
  * @author robert rohm
  */
-public class UIFragmentController implements Initializable {
+public class Baustein {
 
-  private ObservableList<String> comboboxModel;
+  private final StringProperty bezeichnung;
 
-  @FXML
-  private ComboBox<String> comboBox2;
+  public Baustein() {
+    this.bezeichnung = new SimpleStringProperty();
+    // no op.
+  }
 
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
+  public Baustein(String bezeichnung) {
+    this.bezeichnung = new SimpleStringProperty(bezeichnung);
+  }
+
+  public String getBezeichnung() {
+    return bezeichnung.get();
+  }
+
+  public void setBezeichnung(String bezeichnung) {
+    this.bezeichnung.set(bezeichnung);
+  }
+
+  public StringProperty bezeichnungProperty() {
+    return this.bezeichnung;
   }
 
 }

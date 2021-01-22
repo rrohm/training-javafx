@@ -26,31 +26,40 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
+package org.meins.javafx.architektur.view;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.TitledPane;
 
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
  *
  * @author robert rohm
  */
-public class UIFragmentController implements Initializable {
+public class BausteinAuswahl extends TitledPane implements Initializable {
 
-  private ObservableList<String> comboboxModel;
+  public BausteinAuswahl() {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/meins/javafx/architektur/app/BausteinAuswahl.fxml"));
+    fxmlLoader.setRoot(this);
+    fxmlLoader.setController(this);
 
-  @FXML
-  private ComboBox<String> comboBox2;
+    try {
+      fxmlLoader.load();
 
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
+    } catch (IOException ex) {
+      // TODO: Einheitliche Fehlerbehandlung
+      ex.printStackTrace();
+    }
   }
 
+  
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
+    System.out.println(this.getClass().getName() + ".initialize");
+ 
+  }
+  
 }

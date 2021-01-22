@@ -26,31 +26,60 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
+package org.meins.javafx.architektur.view;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TitledPane;
 
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
- *
+ * View-Baustein für die Darstellung der Element-Model-Liste.
+ * 
  * @author robert rohm
  */
-public class UIFragmentController implements Initializable {
-
-  private ObservableList<String> comboboxModel;
+public class ElementListe extends TitledPane implements Initializable {
 
   @FXML
-  private ComboBox<String> comboBox2;
+  private TitledPane pane;
+
+  @FXML
+  private TableView<?> tvElemente;
+
+  @FXML
+  private TableColumn<?, ?> colName;
+
+  @FXML
+  private TableColumn<?, ?> colBaustein1;
+
+  @FXML
+  private TableColumn<?, ?> colBaustein2;
+
+  @FXML
+  private TableColumn<?, ?> colBaustein3;
+
+  @SuppressWarnings("LeakingThisInConstructor")
+  public ElementListe() {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/meins/javafx/architektur/app/ElementListe.fxml"));
+    fxmlLoader.setRoot(this);
+    fxmlLoader.setController(this);
+
+    try {
+      fxmlLoader.load();
+
+    } catch (IOException ex) {
+      // TODO: Einheitliche Fehlerbehandlung
+      ex.printStackTrace();
+    }
+  }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
+    System.out.println(this.getClass().getName() + ".initialize");
   }
-
 }

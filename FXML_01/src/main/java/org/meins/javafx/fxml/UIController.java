@@ -45,6 +45,10 @@ public class UIController implements Initializable {
   private ComboBox<String> comboBox1;
   @FXML
   private ComboBox<String> comboBox2;
+  /**
+   * Achtung: Namenskonvention für "embedded controllers:"
+   * [fx:id]["Controller"]
+   */
   @FXML
   private UIFragmentController fragmentController;
 
@@ -53,5 +57,8 @@ public class UIController implements Initializable {
   public void initialize(URL url, ResourceBundle rb) {
     this.comboBox2.getItems().addAll("Erster Eintrag", "Zweiter Eintrag", "Dritter Eintrag");
     System.out.println("this.fragmentController: " + this.fragmentController);
+
+    // TODO: Initialisierung des (view-)Models des eingebetten Controllers!
+    this.fragmentController.comboboxModelProperty().setAll(....)
   }
 }

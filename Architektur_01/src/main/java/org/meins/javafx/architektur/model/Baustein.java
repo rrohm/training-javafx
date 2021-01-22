@@ -26,31 +26,13 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
-
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+package org.meins.javafx.architektur.model;
 
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
+ * Datenmodell eines Bausteins.
  *
  * @author robert rohm
  */
-public class UIFragmentController implements Initializable {
-
-  private ObservableList<String> comboboxModel;
-
-  @FXML
-  private ComboBox<String> comboBox2;
-
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
-  }
+public class Baustein {
 
 }

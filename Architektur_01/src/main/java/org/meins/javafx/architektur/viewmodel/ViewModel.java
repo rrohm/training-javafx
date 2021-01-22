@@ -26,31 +26,24 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.fxml;
-
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+package org.meins.javafx.architektur.viewmodel;
 
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
+ * Diese Klasse bildet das (eigentliche) ViewModel ab. Sie dient der klaren
+ * Abgrenzung von der Controller-Logik und den View-Elementen. Dadurch ist sie
+ * unabhängig vom UI-Framework testbar.
  *
  * @author robert rohm
  */
-public class UIFragmentController implements Initializable {
+public class ViewModel {
 
-  private ObservableList<String> comboboxModel;
+  private Element element = new Element();
 
-  @FXML
-  private ComboBox<String> comboBox2;
-
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
+  public Element getElement() {
+    return element;
   }
 
+  public void setElement(Element element) {
+    this.element = element;
+  }
 }

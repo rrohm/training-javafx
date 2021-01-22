@@ -8,7 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="256.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.meins.javafx.fxml.UIController">
+<AnchorPane id="AnchorPane" prefHeight="256.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/15.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.meins.javafx.fxml.UIController">
   <children>
     <!-- Dank fx:value-Attributen lassen sich Instanzen beliebiger Typen in FXML deklarieren, -->
     <!-- solange sie eine valueOf(String t)-Methode implementieren.                           -->

@@ -86,6 +86,10 @@ public class ArrowButton extends Control {
     return this.direction;
   }
 
+  /**
+   * Optional: ist nur nötig, wenn CSS keine Skin-Klasse liefert.
+   * @return
+   */
   @Override
   protected Skin<ArrowButton> createDefaultSkin() {
     System.out.println("createDefaultSkin ");
