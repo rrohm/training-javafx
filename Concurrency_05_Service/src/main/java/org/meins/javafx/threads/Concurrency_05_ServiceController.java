@@ -41,6 +41,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 
 /**
+ * Dieses Beispiel illustriert die grundlegende Handhabung von JavaFX-Services.
  *
  * @author robert rohm
  */

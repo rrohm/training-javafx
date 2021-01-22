@@ -37,7 +37,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 /**
- * Dieser Controller zeigt nur  die Ausgangssituation des Beispiels ("so wie man
+ * <b>ANTI-PATTERN-Warnung!</b> Dieser Controller zeigt nur  die Ausgangssituation des Beispiels ("so wie man
  * es nicht machen sollte"): Der nebenläufige Code blockiert für die Dauer der
  * Ausführung die GUI.
  *

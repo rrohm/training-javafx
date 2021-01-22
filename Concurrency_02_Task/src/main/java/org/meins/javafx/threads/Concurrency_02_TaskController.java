@@ -39,6 +39,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 
 /**
+ * Dieses Beispiel illustriert grundlegend das Abbrechen von JavaFX-Tasks. Das Prinzip ist dasselbe wie im klassischen
+ * Java-Multithreading: Einen "harten" Abbruch darf es nicht geben. Man muss den Task "höflich bitten, zügig zum
+ * Ende zu kommen". Ob, wie und wann dies geschieht, liegt in der Verantwortung des Tasks – bzw. bei uns!
  *
  * @author robert rohm
  */
