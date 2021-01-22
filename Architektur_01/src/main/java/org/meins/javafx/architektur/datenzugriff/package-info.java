@@ -26,41 +26,10 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.architektur.model;
-
 /**
- * Datenmodell eines Bausteins.
- *
- * @author robert rohm
+ * Dieses Paket kapselt in diesem Beispiel-Projekt alles, was mit unmittelbarem
+ * Datenzugriff zu tun hat. In realem Kontext können dies REST-Service-Consumer
+ * sein, klassische "DAO", etc. Genausogut können diese in realem Kontext auch
+ * Bestandteil externer Bibliotheken sein – außerhalb dieses Projekts.
  */
-public class Baustein {
-  
-  private int id;
-
-  private String name;
-
-  public Baustein() {
-    // no op
-  }
-
-  public Baustein(int id, String name) {
-    this.id = id;
-    this.name = name;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
-}
+package org.meins.javafx.architektur.datenzugriff;

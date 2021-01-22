@@ -26,41 +26,39 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
-package org.meins.javafx.architektur.model;
+package org.meins.javafx.architektur.datenzugriff;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.meins.javafx.architektur.model.Baustein;
 
 /**
- * Datenmodell eines Bausteins.
+ * Dummy-Datenzugriffsklasse für Baustein-Model-Daten, ersetzt z.B. einen
+ * REST-Service-Consumer.
  *
- * @author robert rohm
+ * @author robert
  */
-public class Baustein {
-  
-  private int id;
+public class BausteinDatenzugriff {
 
-  private String name;
+  public List<Baustein> leseAlle() {
+    List<Baustein> daten = new ArrayList<>();
+    daten.addAll(Arrays.asList(
+            new Baustein(1, "Baustein 1"),
+            new Baustein(2, "Baustein 2"),
+            new Baustein(3, "Baustein 3"),
+            new Baustein(4, "Baustein 4"),
+            new Baustein(5, "Baustein 5"),
+            new Baustein(6, "Baustein 6"),
+            new Baustein(7, "Baustein 7")
+    ));
 
-  public Baustein() {
-    // no op
-  }
-
-  public Baustein(int id, String name) {
-    this.id = id;
-    this.name = name;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
+    // Unser Datenzugriff dauert etwas ....
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+    return daten;
   }
 }
