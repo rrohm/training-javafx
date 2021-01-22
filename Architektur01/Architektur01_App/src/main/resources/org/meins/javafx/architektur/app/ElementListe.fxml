@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.meins.javafx.architektur.view.BausteinAuswahl?>
+
+<fx:root fx:id="pane" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+         minHeight="-Infinity" minWidth="-Infinity" text="Elemente" type="TitledPane"
+         xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+      <AnchorPane>
+         <children>
+          <HBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+              <TableView fx:id="tvElemente" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                <columns>
+                  <TableColumn fx:id="colName" prefWidth="150.0" text="Name" />
+                  <TableColumn fx:id="colBaustein1" prefWidth="100.0" text="Baustein 1" />
+                  <TableColumn fx:id="colBaustein2" prefWidth="100.0" text="Baustein 2" />
+                  <TableColumn fx:id="colBaustein3" prefWidth="100.0" text="Baustein 3" />
+                </columns>
+              </TableView>
+              <VBox prefHeight="200.0" prefWidth="200.0" spacing="10.0">
+                <children>
+                  <BausteinAuswahl fx:id="pnBausteinAuswahl1" />
+                  <BausteinAuswahl fx:id="pnBausteinAuswahl2" />
+                  <BausteinAuswahl fx:id="pnBausteinAuswahl3" />
+                </children>
+              </VBox>
+            </children>
+          </HBox>
+         </children>
+      </AnchorPane>
+  </content>
+</fx:root>

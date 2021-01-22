@@ -1,0 +1,15 @@
+
+plugins {
+  id "java"
+  id "application"
+  id "com.github.johnrengelman.shadow" version "6.1.0"
+}
+description = 'Architektur01_Backend'
+
+
+
+
+dependencies {
+}
+
+mainClassName = "org.meins.javafx.architektur.backend.ServiceMain"

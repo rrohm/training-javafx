@@ -1,4 +1,0 @@
-org/meins/javafx/binding/SampleController.java
- org.meins.javafx.binding.SampleController
-org/meins/javafx/binding/Binding06_bidirectional.java
- org.meins.javafx.binding.Binding06_bidirectional

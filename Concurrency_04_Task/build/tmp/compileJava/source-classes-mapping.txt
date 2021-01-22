@@ -1,5 +1,0 @@
-org/meins/javafx/threads/Concurrency_04_Task.java
- org.meins.javafx.threads.Concurrency_04_Task
-org/meins/javafx/threads/Concurrency_04_TaskController.java
- org.meins.javafx.threads.Concurrency_04_TaskController
- org.meins.javafx.threads.Concurrency_04_TaskController$1

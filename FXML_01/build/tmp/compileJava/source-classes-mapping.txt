@@ -1,6 +1,0 @@
-org/meins/javafx/fxml/UIFragmentController.java
- org.meins.javafx.fxml.UIFragmentController
-org/meins/javafx/fxml/UIController.java
- org.meins.javafx.fxml.UIController
-org/meins/javafx/fxml/FXML_01.java
- org.meins.javafx.fxml.FXML_01
