@@ -1,5 +1,0 @@
-rootProject.name = 'Architektur01'
-
-include ':Architektur01_Backend'
-include ':Architektur01_App'
-
