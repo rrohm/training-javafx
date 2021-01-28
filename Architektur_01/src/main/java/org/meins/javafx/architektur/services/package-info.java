@@ -35,5 +35,10 @@
  * laufender Aktionen nebenläufig auszuführen, gleichzeitig aber Feedback wieder
  * auf dem FX Application Thread geben zu können.
  * </p>
+ * <p>
+ * In der Praxis gibt es viele Möglichkeiten, Services zu verwalten, von der klassischen
+ * Factory bis zur Dependency Injections. In diesem Fall kommt eine Service-Factory zum
+ * Einsatz, da das Beispielprojekt sich v.a. auf die JavaFX-App-Struktur konzentriert.
+ * </p>
  */
 package org.meins.javafx.architektur.services;

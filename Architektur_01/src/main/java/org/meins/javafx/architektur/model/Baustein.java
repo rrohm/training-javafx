@@ -63,4 +63,39 @@ public class Baustein {
   public void setId(int id) {
     this.id = id;
   }
+
+  /**
+   * Wichtig: Diese Klasse muss anhand der ID verglichen werden können.
+   * Daher müssen Hashcode und Equality neu implementiert werden.
+   * Dies ist u.a. für das Setzen der Selektion in Choicebox oder Combobox
+   * wichtig.
+   *
+   * @return Hashcode
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 23 * hash + this.id;
+    return hash;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final Baustein other = (Baustein) obj;
+    if (this.id != other.id) {
+      return false;
+    }
+    return true;
+  }
+  
+  
 }

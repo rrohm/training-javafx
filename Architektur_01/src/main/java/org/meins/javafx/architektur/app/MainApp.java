@@ -29,8 +29,6 @@
 package org.meins.javafx.architektur.app;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -53,6 +51,7 @@ public class MainApp extends Application {
 
     Scene scene = new Scene(anwendung.erzeugeHauptfenster());
 
+    stage.setTitle("MVVM-Architektur-Beispiel 01");
     stage.setScene(scene);
     stage.show();
   }

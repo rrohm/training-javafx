@@ -30,6 +30,8 @@ package org.meins.javafx.fxml;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -43,14 +45,22 @@ import javafx.scene.control.ComboBox;
  */
 public class UIFragmentController implements Initializable {
 
-  private ObservableList<String> comboboxModel;
+  private final ObservableList<String> comboboxModel;
 
   @FXML
   private ComboBox<String> comboBox2;
 
+  public UIFragmentController() {
+    this.comboboxModel = FXCollections.observableArrayList();
+  }
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    this.comboBox2.getItems().addAll("Erster Sub-Eintrag", "Zweiter Sub-Eintrag", "Dritter Sub-Eintrag");
+    this.comboBox2.setItems(comboboxModel);
+  }
+
+  public ObservableList<String> getComboboxModel() {
+    return comboboxModel;
   }
 
 }

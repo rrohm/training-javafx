@@ -90,6 +90,10 @@ public class Concurrency_04_TaskController implements Initializable {
         return null;
       }
 
+      /**
+       * ACHTUNG: Interne Behandlungsmethoden werden <b>auf dem FX-Application Thread</b> ausgeführt,
+       * und zwar <b>nach der Abarbeitung</b> aller von außen zugewiesener Handler.
+       */
       @Override
       protected void scheduled() {
         super.scheduled(); // leer
@@ -97,6 +101,10 @@ public class Concurrency_04_TaskController implements Initializable {
         System.out.println("TASK: Task geplant.");
       }
 
+      /**
+       * ACHTUNG: Interne Behandlungsmethoden werden <b>auf dem FX-Application Thread</b> ausgeführt,
+       * und zwar <b>nach der Abarbeitung</b> aller von außen zugewiesener Handler.
+       */
       @Override
       protected void done() {
         super.done(); // leer
@@ -104,6 +112,10 @@ public class Concurrency_04_TaskController implements Initializable {
         System.out.println("TASK: Task beendet.");
       }
 
+      /**
+       * ACHTUNG: Interne Behandlungsmethoden werden <b>auf dem FX-Application Thread</b> ausgeführt,
+       * und zwar <b>nach der Abarbeitung</b> aller von außen zugewiesener Handler.
+       */
       @Override
       protected void cancelled() {
         super.cancelled(); // leer
@@ -111,6 +123,10 @@ public class Concurrency_04_TaskController implements Initializable {
         System.out.println("TASK: Task abgebrochen.");
       }
 
+      /**
+       * ACHTUNG: Interne Behandlungsmethoden werden <b>auf dem FX-Application Thread</b> ausgeführt,
+       * und zwar <b>nach der Abarbeitung</b> aller von außen zugewiesener Handler.
+       */
       @Override
       protected void failed() {
         super.failed(); // leer

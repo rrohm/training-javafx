@@ -27,19 +27,22 @@
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
 /**
- * Das ViewModel ist das Bindglied zwischen Model und View:
+ * <p>Die ViewModel-Bausteine der Anwendung – in diesem Beispiel-Projekt zur Gegenüberstellung
+ * teils nach <b>"View first"</b>-Ansatz, teils nach <b>"ViewModel first"</b>-Ansatz implementiert.</p>
+ * 
+ * <p>Das ViewModel ist das Bindglied zwischen Model und View.</p>
  * <ul>
- *     <li>Es hält die Model-Information für die View bereit - ggf. in für die View geeigneter Form</li>
- *     <li>Es stellt ggf. zusätzliche Properties für die UI-Steuerung bereit.</li>
- *     <li>Es kennt jedoch keine spezifischen UI-Elemente.</li>
- *     <li>Statt dessen werden UI-Elemente an ViewModel-Elemente gebunden.</li>
- *     <li>Eine Implementierung des ViewModels als eigenständige Struktur macht es möglich, ViewModel-Verhalten
- *         völlig unabhängig vom UI zu testen.
- *     </li>
- *     <li>Nach MVVM-Pattern ist das ViewModel auch zuständig für die Aktualisierung des Models. Allerdings
- *         macht das Pattern und auch das JavaFX-Framework keine Aussage darüber, <i>wie</i> dies im Detail zu lösen ist.
- *         Dies bleibe als "Herausforderung" für die Entwicklung.
- *     </li>
+ *   <li>Es hält die Model-Information für die View bereit - ggf. in für die View geeigneter Form</li>
+ *   <li>Es stellt ggf. zusätzliche Properties für die UI-Steuerung bereit.</li>
+ *   <li>Es kennt jedoch keine spezifischen UI-Elemente.</li>
+ *   <li>Statt dessen werden UI-Elemente an ViewModel-Elemente gebunden.</li>
+ *   <li>Eine Implementierung des ViewModels als eigenständige Struktur macht es möglich, ViewModel-Verhalten
+ *       völlig unabhängig vom UI zu testen.
+ *   </li>
+ *   <li>Nach MVVM-Pattern ist das ViewModel auch zuständig für die Aktualisierung des Models. Allerdings
+ *       macht das Pattern und auch das JavaFX-Framework keine Aussage darüber, <i>wie</i> dies im Detail zu lösen ist.
+ *       Dies bleibe als "Herausforderung" für die Entwicklung.
+ *   </li>
  * </ul>
  */
 package org.meins.javafx.architektur.viewmodel;

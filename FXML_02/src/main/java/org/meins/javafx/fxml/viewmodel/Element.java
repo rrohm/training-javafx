@@ -34,12 +34,16 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * ViewModel-Element, mit Unterstruktur
+ * Untergeordnetes ViewModel-Element zur Abbildung von Model-Daten. Im realen
+ * Kontext wäre diese Klasse ein Wrapper oder Stellvertreter für ein
+ * Model-Objekt. Im Gegensatz zu den eigentlichen Model-Elementen sind Felder
+ * dieser Klasse nach ViewModel-Art als überwachbare Properties ausgeführt.
+ *
  *
  * @author robert rohm
  */
 public class Element {
-  
+
   private final StringProperty name = new SimpleStringProperty("Bitte Name ändern ...");
   private final StringProperty beschreibung = new SimpleStringProperty("Bitte Beschreibung eingeben ...");
 
@@ -52,31 +56,31 @@ public class Element {
     this.baustein2 = new SimpleObjectProperty<>();
     this.baustein1 = new SimpleObjectProperty<>();
   }
-  
-  public StringProperty nameProperty(){
+
+  public StringProperty nameProperty() {
     return this.name;
   }
-  
-  public String getName(){
+
+  public String getName() {
     return this.name.get();
   }
-  
-  public void setName(String name){
+
+  public void setName(String name) {
     this.name.set(name);
   }
-  
-  public StringProperty beschreibungProperty(){
+
+  public StringProperty beschreibungProperty() {
     return this.beschreibung;
   }
-  
-  public String getBeschreibung(){
+
+  public String getBeschreibung() {
     return this.beschreibung.get();
   }
 
-  public void setBeschreibung(String beschreibung){
+  public void setBeschreibung(String beschreibung) {
     this.beschreibung.set(beschreibung);
   }
-  
+
   public ObjectProperty<Baustein> baustein1Property() {
     return baustein1;
   }

@@ -32,7 +32,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * Untergeordnetes ViewModel-Elements
+ * Untergeordnetes ViewModel-Element zur Abbildung von Model-Daten. Im realen
+ * Kontext wäre diese Klasse ein Wrapper oder Stellvertreter für ein
+ * Model-Objekt. Im Gegensatz zu den eigentlichen Model-Elementen sind Felder
+ * dieser Klasse nach ViewModel-Art als überwachbare Properties ausgeführt.
  *
  * @author robert rohm
  */

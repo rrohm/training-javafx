@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="283.0" prefWidth="355.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="org.meins.javafx.fxml.threadedloading.FXMLDocumentController">
+  <children>
+    <Button fx:id="button" layoutX="7.0" layoutY="14.0" onAction="#handleButtonAction" text="load FXML" />
+    <Label fx:id="label" layoutX="248.0" layoutY="20.0" minHeight="16" minWidth="69" />
+      <ScrollPane layoutX="7.0" layoutY="57.0" prefHeight="139.0" prefWidth="306.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="57.0">
+         <content>
+            <VBox fx:id="vBox" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="button1" layoutX="100.0" layoutY="15.0" onAction="#handleAsyncLoad" prefHeight="25.0" prefWidth="135.0" text="load FXML async." />
+  </children>
+</AnchorPane>

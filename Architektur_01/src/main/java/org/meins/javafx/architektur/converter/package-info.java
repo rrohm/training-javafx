@@ -26,4 +26,13 @@
  *
  *   2021 aeonium software systems UG (haftungsbeschränkt), Robert Rohm.
  */
+/**
+ * Converter, zwecks Wiederverwendung in eigenständigen Klassen implementiert.
+ * <p>
+ * Je nach MVVM-Ansatz ("View first" oder "ViewModel first") wäre es u.U.
+ * entweder Sache der View <i>oder</i> des ViewModels, die Definition von
+ * Convertern zu übernehmen. So gesehen schafft das Zusammenfassen in einem
+ * eigenen eigenen Package mehr Klarheit und erübrigt u.U. nicht eindeutig zu
+ * treffende Entscheidungen.</p>
+ */
 package org.meins.javafx.architektur.converter;

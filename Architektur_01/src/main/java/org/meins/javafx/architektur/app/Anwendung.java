@@ -28,12 +28,16 @@
  */
 package org.meins.javafx.architektur.app;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import javafx.scene.Parent;
-import org.meins.javafx.architektur.view.UI;
+import org.meins.javafx.architektur.conf.GuiceModule;
+import org.meins.javafx.architektur.viewmodel.UiViewModel;
 
 /**
- * Diese Klasse dient vor allem als Wrapper für die Initialisierung der 
- * Anwendungslogik. Sie kann als Factory verstanden werden. 
+ * Diese Klasse dient vor allem als Wrapper für die Initialisierung der
+ * Anwendungslogik. Sie kann als Factory verstanden werden (s.u.).
+ *
  * @author robert rohm
  */
 public class Anwendung {
@@ -41,11 +45,21 @@ public class Anwendung {
   public Anwendung() {
     // no op
   }
-  
-  public Parent erzeugeHauptfenster(){
-    UI ui = new UI();
-    // hier ggf. weitere Initialisierung
-    
-    return ui;
+
+  /**
+   * In diesem Beispiel sollen View und ViewModel im Sinne der MVVM-Architektur
+   * nach dem "ViewModel-First"-Ansatz erzeugt und verdrahtet werden.
+   * <p>
+   * In diesem Fall werden Abhängigkeiten innerhalb des ViewModels via
+   * Dependency Injection mittels Google Guice verwaltet.</p>
+   *
+   * @return Parent-Node des geladenen Hauptfensters
+   */
+  public Parent erzeugeHauptfenster() {
+
+    Injector injector = Guice.createInjector(new GuiceModule());
+    UiViewModel uiViewModel = injector.getInstance(UiViewModel.class);
+
+    return uiViewModel.getView();
   }
 }

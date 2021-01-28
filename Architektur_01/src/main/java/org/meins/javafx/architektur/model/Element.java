@@ -36,6 +36,8 @@ package org.meins.javafx.architektur.model;
  */
 public class Element {
 
+  private int id;
+
   private String name;
   private String bezeichnung;
 
@@ -47,7 +49,8 @@ public class Element {
     // no op
   }
 
-  public Element(String name, String bezeichnung, Baustein baustein1, Baustein baustein2, Baustein baustein3) {
+  public Element(int id, String name, String bezeichnung, Baustein baustein1, Baustein baustein2, Baustein baustein3) {
+    this.id = id;
     this.name = name;
     this.bezeichnung = bezeichnung;
     this.baustein1 = baustein1;
@@ -93,5 +96,13 @@ public class Element {
 
   public void setBaustein3(Baustein baustein3) {
     this.baustein3 = baustein3;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 }

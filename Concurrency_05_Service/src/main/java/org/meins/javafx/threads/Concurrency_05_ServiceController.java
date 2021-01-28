@@ -56,7 +56,7 @@ public class Concurrency_05_ServiceController implements Initializable {
   @FXML
   private ProgressBar progressBar;
 
-  private Service<Void> meinService = new MeinService();
+  private MeinService meinService = new MeinService();
 
   @FXML
   private void handleButtonAction(ActionEvent event) {
@@ -70,6 +70,8 @@ public class Concurrency_05_ServiceController implements Initializable {
 //    if (!meinService.getState().equals(WorkerStateEvent.WORKER_STATE_SCHEDULED)) {
 //      meinService.reset(); // ... Exception! May only be called while in one of the finish states!
 //    }
+    /// Ggf. Vor Start des Services: entsprechend parametrisieren, z.B._
+    meinService.setId(10001); /// TODO: Übergabe weiter ausillustrieren
     meinService.start();
   }
 
@@ -89,6 +91,12 @@ public class Concurrency_05_ServiceController implements Initializable {
   }
 
   private static class MeinService extends Service<Void> {
+
+    private int id;
+
+    public void setId(int id){
+      this.id = id;
+    }
 
     public MeinService() {
     }

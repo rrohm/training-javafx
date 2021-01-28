@@ -35,7 +35,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Bidirectional Binding with a Converter. 
+ * Application launcher class.
  *
  * @author robert rohm
  */
@@ -46,7 +46,7 @@ public class FXML_02 extends Application {
     Parent root = FXMLLoader.load(getClass().getResource("UI.fxml"));
 
     Scene scene = new Scene(root);
-
+    stage.setTitle(this.getClass().getSimpleName());
     stage.setScene(scene);
     stage.show();
   }

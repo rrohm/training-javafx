@@ -58,7 +58,7 @@ public class UIController implements Initializable {
     this.comboBox2.getItems().addAll("Erster Eintrag", "Zweiter Eintrag", "Dritter Eintrag");
     System.out.println("this.fragmentController: " + this.fragmentController);
 
-    // TODO: Initialisierung des (view-)Models des eingebetten Controllers!
-    this.fragmentController.comboboxModelProperty().setAll(....)
+    // Initialisierung des (View-)Models des eingebetten Controllers!
+    this.fragmentController.getComboboxModel().setAll("Erster Eintrag", "Zweiter Eintrag", "Dritter Eintrag");
   }
 }

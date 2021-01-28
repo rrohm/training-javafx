@@ -1,0 +1,29 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+description = 'FXML_DI_01'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile group: 'com.google.inject', name: 'guice', version: '4.1.0'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+  useJUnitPlatform()
+}
+
+javafx {
+  version = "${project.JAVAFX_VERSION}"
+  modules = [ 'javafx.controls' , 'javafx.fxml' ]
+}
+
+mainClassName = 'org.meins.fxml.di.FXMLApp_06_DI'

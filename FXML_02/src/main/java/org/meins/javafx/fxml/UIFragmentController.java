@@ -40,43 +40,65 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TitledPane;
-import javafx.util.StringConverter;
 import org.meins.javafx.fxml.viewmodel.Baustein;
 
 /**
- * Controller of an FXML UI fragment.
- *
- * Wie kommt der Controller
+ * FXML-Controller eines UI-Fragments. Er muss im MVVM-Kontext nach dem
+ * gewählten Ansatz als Bestandteil der View gesehen werden. Sein Job ist es im
+ * wesentlichen nur, eine API zu Zugriff auf die vom ViewModel benötigten
+ * View-Elemente bzw. auf deren benötigte Properties zu bieten. Er übernimmt
+ * keine Verdrahtungslogik oder Interaktions-Behandlung, da dies Bestandteil des
+ * ViewModels sein soll!
  *
  * @author robert rohm
  */
 public class UIFragmentController implements Initializable {
 
-  private final ObservableList<Baustein> viewModel = FXCollections.observableArrayList();
-
-  private final ObjectProperty<Baustein> baustein = new SimpleObjectProperty<>();
+  /**
+   * ViewModel-Element "Bausteinliste".
+   */
+  private final ObservableList<Baustein> bausteinListe;
+  /**
+   * ViewModel-Element "selektierter Baustein".
+   */
+  private final ObjectProperty<Baustein> selectedBaustein;
 
   @FXML
   private TitledPane pane;
   @FXML
   private ComboBox<Baustein> comboBox2;
 
+  public UIFragmentController() {
+    this.bausteinListe = FXCollections.observableArrayList();
+    this.selectedBaustein = new SimpleObjectProperty<>();
+  }
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 
-    this.baustein.bind(this.comboBox2.getSelectionModel().selectedItemProperty());
+    this.selectedBaustein.bind(this.comboBox2.getSelectionModel().selectedItemProperty());
 
-    this.comboBox2.setItems(viewModel);
+    this.comboBox2.setItems(bausteinListe);
     this.comboBox2.setConverter(new BausteinStringConverter());
   }
 
+  /**
+   * ViewMode-Element "Titel", hier nur als "virtuelle" Property nach außen
+   * durchgereicht. In der Klasse gibt es keine eigene Instanz von z.B.
+   * StringProperty.
+   *
+   * @return Virtuelle Property "titleProperty"
+   */
   public StringProperty titleProperty() {
     return this.pane.textProperty();
   }
 
-  public ObservableList<Baustein> getViewModel() {
-    return this.viewModel;
+  public ObservableList<Baustein> getBausteinListe() {
+    return this.bausteinListe;
   }
 
+  public ComboBox<Baustein> getComboBox() {
+    return comboBox2;
+  }
 
 }

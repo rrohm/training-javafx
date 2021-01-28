@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import org.meins.javafx.architektur.view.BausteinAuswahl?>
+<?import org.meins.javafx.architektur.view.BausteinAuswahlView?>
 
 <fx:root fx:id="pane" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
          minHeight="-Infinity" minWidth="-Infinity" text="Elemente" type="TitledPane"
@@ -26,9 +26,9 @@
               </TableView>
               <VBox prefHeight="200.0" prefWidth="200.0" spacing="10.0">
                 <children>
-                  <BausteinAuswahl fx:id="pnBausteinAuswahl1" />
-                  <BausteinAuswahl fx:id="pnBausteinAuswahl2" />
-                  <BausteinAuswahl fx:id="pnBausteinAuswahl3" />
+                  <BausteinAuswahlView fx:id="pnBausteinAuswahl1" text="Baustein 1"/>
+                  <BausteinAuswahlView fx:id="pnBausteinAuswahl2" text="Baustein 2"/>
+                  <BausteinAuswahlView fx:id="pnBausteinAuswahl3" text="Baustein 3"/>
                 </children>
               </VBox>
             </children>

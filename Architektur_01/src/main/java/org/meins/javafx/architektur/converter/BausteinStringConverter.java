@@ -29,7 +29,8 @@
 package org.meins.javafx.architektur.converter;
 
 import javafx.util.StringConverter;
-import org.meins.javafx.architektur.viewmodel.Baustein;
+import org.meins.javafx.architektur.model.Baustein;
+import org.meins.javafx.architektur.viewmodel.BausteinAuswahlViewModel;
 
 /**
  * String-Converter für die ViewModel-Klasse Baustein.
@@ -41,8 +42,8 @@ public class BausteinStringConverter extends StringConverter<Baustein> {
   }
 
   @Override
-  public String toString(Baustein object) {
-    return (object != null) ? object.getBezeichnung() : "";
+  public String toString(Baustein baustein) {
+    return (baustein != null) ? baustein.getName() : "";
   }
 
   @Override

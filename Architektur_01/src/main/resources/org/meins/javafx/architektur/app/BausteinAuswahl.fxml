@@ -7,12 +7,12 @@
 
 <fx:root type="TitledPane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
          prefHeight="100.0" prefWidth="200.0" text="UI-Fragment" collapsible="false" animated="false" 
-         xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" >
+         xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
             <Label text="Bitte Baustein wählen: " wrapText="true" />
-            <ComboBox fx:id="comboBox2" prefWidth="150.0" />
+            <ComboBox fx:id="comboBoxBausteine" prefWidth="150.0" />
          </children>
       </VBox>
    </content>

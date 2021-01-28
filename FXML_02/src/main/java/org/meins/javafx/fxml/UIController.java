@@ -29,7 +29,6 @@
 package org.meins.javafx.fxml;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,7 +40,16 @@ import org.meins.javafx.fxml.viewmodel.Baustein;
 import org.meins.javafx.fxml.viewmodel.ViewModel;
 
 /**
- * Main controller class
+ * FXML-Controller des UIs - er ist in JavaFX-UIs nach MVVM-Konzept der View
+ * zuzurechnen. Die Felder des Controllers für die @FXML-Injektion stellen damit
+ * lediglich die API zu den View-Elementen dar.
+ * <p>
+ * Der Controller als Element der View-Schicht sollte keine eigene
+ * Interaktions-Logik implementieren, das ist Sache des ViewModels. Da der
+ * Controller vom JavaFX-Framework automatisch instanziiert wird, macht hier nur
+ * die "View first"-Interpretation von MVVM Sinn. Demnach erzeugt und verdrahtet
+ * hier die View (d.h., der Controller!) das ViewModel – mehr aber auch nicht.
+ * </p>
  *
  * @author robert rohm
  */
@@ -56,18 +64,23 @@ public class UIController implements Initializable {
   @FXML
   private Label lbBaustein2;
   @FXML
-  private ComboBox<Baustein> comboBox2;
+  private ComboBox<Baustein> comboBox1;
 
   /**
    * Achtung: Namenskonvention für "embedded controllers:" [fx:id]["Controller"]
+   * .
    */
   @FXML
   private UIFragmentController fragmentController;
-
   /**
-   * ViewModel kapselt ViewModel-Daten
+   * ViewModel kapselt ViewModel-Daten, und wird in diesem Beispiel nach dem
+   * "View first"-Ansatz von der View erzeugt.
    */
-  private ViewModel viewModel = new ViewModel();
+  private final ViewModel viewModel;
+
+  public UIController() {
+    this.viewModel = new ViewModel();
+  }
 
   @SuppressWarnings({"rawtypes", "unchecked"})
   @Override
@@ -75,25 +88,20 @@ public class UIController implements Initializable {
     // Bindings der UI-Controls
     this.tfName.textProperty().bindBidirectional(this.viewModel.getElement().nameProperty());
     this.tfBeschreibung.textProperty().bindBidirectional(this.viewModel.getElement().beschreibungProperty());
-    
-    //this.lbBaustein1.textProperty().bind(this.viewModel.getElement().baustein1Property().asString());
-    
+    // Custom String-Bindings:
+    this.lbBaustein1.textProperty().bind(viewModel.createBaustein1Binding());
+    this.lbBaustein2.textProperty().bind(viewModel.createBaustein2Binding());
 
     // Initialisierung des ComboBox-ViewModels
     // Achtung: Befüllung der Listen ist auch ViewModel, muss noch entsprechend abgebildet werden.
-    comboBox2.setConverter(new BausteinStringConverter());
-    comboBox2.getItems().setAll(Arrays.asList(
-            new Baustein("Baustein 1.1"),
-            new Baustein("Baustein 1.2"),
-            new Baustein("Baustein 1.3")
-    ));
+    comboBox1.setConverter(new BausteinStringConverter());
+    comboBox1.setItems(this.viewModel.getBaustein1AuswahlListe());
+    viewModel.selektierterBaustein1Property().bind(comboBox1.valueProperty());
 
     // Initialisierung des (view-)Models des eingebetten Controllers!
     this.fragmentController.titleProperty().set("Baustein 2");
-    this.fragmentController.getViewModel().setAll(Arrays.asList(
-            new Baustein("Baustein 2.1"),
-            new Baustein("Baustein 2.2"),
-            new Baustein("Baustein 2.3")
-    ));
+    this.fragmentController.getBausteinListe().setAll(this.viewModel.getBaustein2AuswahlListe());
+    viewModel.selektierterBaustein2Property().bind(this.fragmentController.getComboBox().valueProperty());
   }
+
 }
